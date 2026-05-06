@@ -1554,17 +1554,18 @@ end
 local Attack = {}
 Attack.__index = Attack
 Attack.Alive = function(model)
-    if not model then 
-        return 
+    if not model or not model.Parent then 
+        return false
     end
     local Humanoid = model:FindFirstChild("Humanoid")
     return Humanoid and Humanoid.Health > 0
 end
 Attack.Kill = function(model, Succes)
     if model and Succes then
+        if not model:FindFirstChild("Humanoid") or not model:FindFirstChild("HumanoidRootPart") then return end
         if not model:GetAttribute("Locked") then
             model:SetAttribute("Locked", model.HumanoidRootPart.CFrame)
-        end        
+        end
         PosMon = model:GetAttribute("Locked").Position
         BringEnemy()        
         EquipWeapon(getgenv().SelectWeapon)
