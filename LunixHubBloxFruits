@@ -1759,10 +1759,9 @@ gg.__namecall = newcclosure(function(...)
     end
     return old(...)
 end)
-local Library = loadstring(game:HttpGet("https://luacrack.site/index.php/Luongdaynetroi/raw/DacCauHub/Ui"))()
-local Window = Library:MakeWin({
-  Title = "Dragon Hub [ BETA ]",
-  SubTitle = "by DucLuong",
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()local Window = Library:MakeWin({
+  Title = "LunixHub [ Blox Fruits ]",
+  SubTitle = "by Karious",
   SaveFolder = "DacCau Hub | Blox Fruits.lua"
 })
 local Status = Window:MakeTab({
